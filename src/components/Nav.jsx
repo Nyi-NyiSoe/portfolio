@@ -11,7 +11,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="flex justify-center p-2">
+    <nav className="fixed top-0 w-full z-50 flex justify-center p-2 backdrop-blur-sm">
       <ul className="flex space-x-4 bg-gray-900 p-4 rounded-xl">
         {links.map((link) => (
           <li key={link.path}>
