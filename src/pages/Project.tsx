@@ -21,7 +21,7 @@ const Project = () => {
       description:
         "Sonique-mobile is the mobile version of the Sonique music player application. It offers a user-friendly interface optimized for mobile devices, allowing users to enjoy their music on the go.",
       technologies: ["Flutter"],
-      demoVideoUrl: "/videos/sbm.mp4",
+      demoVideoUrl: "/videos/smb.mp4",
       onViewProject: () =>
         window.open("https://github.com/Nyi-NyiSoe/sonique-mobile", "_blank"),
     },
