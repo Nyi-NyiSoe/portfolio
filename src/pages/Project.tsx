@@ -1,10 +1,13 @@
+import hlf from "../assets/hlf.png";
+import sentriaImage from "../assets/sentria.png";
+import soniqueMobileImage from "../assets/smb.jpg";
+import soniqueImage from "../assets/sonique.jpg";
 import ProjectCard from "../common/ProjectCard";
-
 const Project = () => {
   const projects = [
     {
       id: 1,
-      image: "src/assets/sonique.jpg",
+      image: soniqueImage,
       title: "Sonique",
       description:
         "Sonique is a music player application that allows users to play, pause, and manage their music library. It features a sleek design and supports various audio formats.",
@@ -16,7 +19,7 @@ const Project = () => {
 
     {
       id: 2,
-      image: "src/assets/smb.jpg",
+      image: soniqueMobileImage,
       title: "Sonique-mobile",
       description:
         "Sonique-mobile is the mobile version of the Sonique music player application. It offers a user-friendly interface optimized for mobile devices, allowing users to enjoy their music on the go.",
@@ -28,7 +31,7 @@ const Project = () => {
     {
       id: 3,
       image:
-        "src/assets/hlf.png",
+        hlf,
       title: "HLF Blood Transfusion",
       description:
         "A work project to help people who need blood, keeping track of patient condition info and donor condition. Works both offline and online to ensure accessibility and reliability.",
@@ -39,7 +42,7 @@ const Project = () => {
     {
       id: 4,
       image:
-        "src/assets/sentria.png",
+        sentriaImage,
       title: "Sentria",
       description:
         "Sentria is a community-driven project to help in areas affected by natural disasters. Using real-time USGS fact checks, people can offer places to stay, WiFi, food, and other resources for those in need.",
