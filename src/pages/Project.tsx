@@ -60,8 +60,8 @@ const Project = () => {
             technologies={project.technologies}
             demoVideoUrl={project.demoVideoUrl}
             onViewProject={project.onViewProject}
-            underConstruction={project.id === 4} // Mark the second project as under construction
-            workProject={project.id === 3} // Mark the first project as a work project
+            underConstruction={project.id === 4} 
+            workProject={project.id === 3} 
           />
         ))}
       </div>
