@@ -1,9 +1,20 @@
+import { useEffect } from "react";
 import hlf from "../assets/hlf.png";
 import sentriaImage from "../assets/sentria.png";
 import soniqueMobileImage from "../assets/smb.jpg";
 import soniqueImage from "../assets/sonique.jpg";
 import ProjectCard from "../common/ProjectCard";
 const Project = () => {
+  useEffect(() => {
+      const elements = document.querySelectorAll(".animate-in");
+      elements.forEach((element, index) => {
+        element.classList.add("opacity-0", "translate-y-10");
+        setTimeout(() => {
+          element.classList.remove("opacity-0", "translate-y-10");
+          element.classList.add("opacity-100", "translate-y-0");
+        }, index * 200);
+      });
+    }, []);
   const projects = [
     {
       id: 1,
@@ -53,7 +64,7 @@ const Project = () => {
   ];
   return (
     <div className="min-h-screen bg-black p-8 md:p-12 animate-in transition-all duration-500">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto animate-in transition-all duration-500">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -64,7 +75,7 @@ const Project = () => {
             demoVideoUrl={project.demoVideoUrl}
             onViewProject={project.onViewProject}
             underConstruction={project.id === 4} 
-            workProject={project.id === 3} 
+            workProject={project.id === 3}  
           />
         ))}
       </div>
