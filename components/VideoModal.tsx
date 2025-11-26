@@ -26,7 +26,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/80"
         />
 
         {/* Modal Content */}
@@ -34,13 +34,13 @@ const VideoModal: React.FC<VideoModalProps> = ({
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
-          className="relative bg-slate-900 rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl border border-slate-700"
+          className="relative bg-gray-900 rounded-xl overflow-hidden shadow-lg w-full max-w-4xl border border-gray-700"
         >
-          <div className="flex justify-between items-center p-4 border-b border-slate-800">
+          <div className="flex justify-between items-center p-4 border-b border-gray-800">
             <h3 className="text-lg font-semibold text-white">{title} - Demo</h3>
             <button
               onClick={onClose}
-              className="p-1 hover:bg-slate-800 rounded-full transition-colors text-slate-400 hover:text-white"
+              className="p-1 rounded-full text-gray-400 transition-colors"
             >
               <X size={24} />
             </button>

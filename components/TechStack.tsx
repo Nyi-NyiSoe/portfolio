@@ -1,15 +1,15 @@
-import React from 'react';
-import SectionWrapper from './SectionWrapper';
-import { TECH_STACK } from '../constants';
 import { motion } from 'framer-motion';
+import React from 'react';
+import { TECH_STACK } from '../constants';
+import SectionWrapper from './SectionWrapper';
 
 const TechStack: React.FC = () => {
   const categories = Array.from(new Set(TECH_STACK.map(t => t.category)));
 
   return (
-    <SectionWrapper className="bg-slate-900">
+    <SectionWrapper className="bg-black">
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-slate-100 mb-4">Technology Stack</h2>
+        <h2 className="text-3xl font-bold text-white mb-4">Technology Stack</h2>
         <div className="h-1 w-20 bg-blue-500 rounded-full"></div>
       </div>
 
@@ -22,17 +22,20 @@ const TechStack: React.FC = () => {
             transition={{ delay: catIndex * 0.1 }}
             className="space-y-4"
           >
-            <h3 className="text-xl font-semibold text-slate-300 border-b border-slate-800 pb-2">{category}</h3>
+            <h3 className="text-xl font-semibold text-gray-300 border-b border-gray-800 pb-2">
+              {category}
+            </h3>
+
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {TECH_STACK.filter(t => t.category === category).map((tech, i) => (
+              {TECH_STACK.filter(t => t.category === category).map((tech) => (
                 <div 
                   key={tech.name} 
-                  className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:border-blue-500/50 transition-colors group"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-[#111111] border border-gray-700 hover:border-blue-500 transition-colors group"
                 >
-                  <span className="text-slate-400 group-hover:text-blue-400 transition-colors">
+                  <span className="text-gray-400 group-hover:text-blue-400 transition-colors">
                     {tech.icon}
                   </span>
-                  <span className="text-slate-300 font-medium text-sm">{tech.name}</span>
+                  <span className="text-gray-300 font-medium text-sm">{tech.name}</span>
                 </div>
               ))}
             </div>

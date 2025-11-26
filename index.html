@@ -11,26 +11,28 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #0f172a; /* Slate 900 */
+        background-color: #000000; /* Black background */
         color: #f8fafc; /* Slate 50 */
         overflow-x: hidden;
       }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #0f172a;
+        background: #1f1f1f; /* Dark grey */
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155;
+        background: #3a3a3a; /* Grey */
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
+        background: #555555; /* Lighter grey */
       }
     </style>
-  <script type="importmap">
+
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
@@ -42,10 +44,12 @@
   }
 }
 </script>
+
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

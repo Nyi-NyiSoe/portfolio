@@ -1,13 +1,13 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
+import Experience from './components/Experience';
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 import ProjectDetails from './components/ProjectDetails';
+import Projects from './components/Projects';
+import TechStack from './components/TechStack';
 
 // Landing page component combining sections
 const LandingPage: React.FC = () => {
@@ -25,7 +25,7 @@ const LandingPage: React.FC = () => {
 const App: React.FC = () => {
   return (
     <HashRouter>
-      <div className="bg-slate-900 min-h-screen text-slate-100 selection:bg-blue-500/30 selection:text-blue-200">
+      <div className="bg-black min-h-screen text-slate-100 selection:bg-gray-700 selection:text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
