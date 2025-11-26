@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <SectionWrapper id="projects" className="bg-[#0F0F11]">
+    <SectionWrapper id="projects" className="bg-[#111111]">
       <div className="flex flex-col items-center mb-12">
         
         {/* Title */}

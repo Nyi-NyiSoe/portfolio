@@ -4,7 +4,7 @@ import SectionWrapper from "./SectionWrapper";
 
 const About: React.FC = () => {
   return (
-    <SectionWrapper id="about" className="bg-slate-800/30">
+    <SectionWrapper id="about" className="bg-[#111111]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-100 mb-6">
