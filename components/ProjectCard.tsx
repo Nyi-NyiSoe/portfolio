@@ -14,6 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
 
   return (
     <div className="group relative bg-[#111111] rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all hover:shadow-2xl hover:shadow-blue-900 flex flex-col h-full">
+
       {/* Image Section */}
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10" />
@@ -23,17 +24,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />
 
-        {isWork && (
-          <div className="absolute top-3 right-3 z-20 bg-amber-400 text-black text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1">
-            <Lock size={12} /> Confidential
-          </div>
-        )}
-
-        {!isWork && isDev && (
+        {/* 🔥 Badge Logic */}
+        {isWork && isDev ? (
           <div className="absolute top-3 right-3 z-20 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1">
             <Construction size={12} /> In Dev
           </div>
-        )}
+        ) : isWork ? (
+          <div className="absolute top-3 right-3 z-20 bg-amber-400 text-black text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1">
+            <Lock size={12} /> Confidential
+          </div>
+        ) : isDev ? (
+          <div className="absolute top-3 right-3 z-20 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1">
+            <Construction size={12} /> In Dev
+          </div>
+        ) : null}
       </div>
 
       {/* Content Section */}
@@ -66,15 +70,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
 
         {/* Actions */}
         <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-700">
-          {isWork ? (
+
+          {/* 🔥 WORK + DEV */}
+          {isWork && isDev && project.repoUrl ? (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              <ExternalLink size={16} /> View Project
+            </a>
+
+          ) : isWork ? (
             <div className="w-full text-center py-2 bg-gray-900 border border-gray-700 border-dashed rounded text-gray-500 text-sm italic">
               Internal Project - View Disabled
             </div>
+
           ) : isDev ? (
             <>
               <div className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 text-gray-400 text-sm font-medium rounded-lg border border-gray-700 cursor-not-allowed">
                 <Construction size={16} /> In Progress
               </div>
+
               <Link
                 to={`/project/${project.id}`}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors"
@@ -90,6 +108,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
               >
                 <PlayCircle size={16} /> Demo
               </button>
+
               <Link
                 to={`/project/${project.id}`}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors"
@@ -100,6 +119,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
           )}
         </div>
 
+        {/* Bottom Links */}
         {!isWork && !isDev && (
           <div className="flex gap-4 mt-3 justify-center">
             <a
@@ -124,5 +144,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDemo }) => {
     </div>
   );
 };
-
 export default ProjectCard;

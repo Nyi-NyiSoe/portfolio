@@ -110,6 +110,19 @@ export const PROJECTS: Project[] = [
       "HIPAA compliant application handling sensitive patient data with multi-factor authentication.",
   },
   {
+     id: "work-3",
+    title: "MandaX",
+    description: "A digital ecosystem designed to empower creators and delight readers.",
+    technologies: ["React Native", "TypeScript"],
+    type: ProjectType.WORK,
+    imageUrl: "https://picsum.photos/800/600?random=2",
+    longDescription:
+      "The premier platform for Myanmar Graphic Novels. Where artists build careers and readers discover extraordinary stories.",
+      repoUrl: "https://www.mandax.io/",
+      inDevelopment: true,
+      
+  },
+  {
     id: "hobby-1",
     title: "Sonique",
     description: "A music player.",
